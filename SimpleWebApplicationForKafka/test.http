@@ -1,0 +1,27 @@
+curl -X POST \
+  http://192.168.49.2/topics/my-topic \
+  -H 'content-type: application/vnd.kafka.json.v2+json' \
+  -d '{
+    "records": [
+        {
+            "key": "my-key",
+            "value": "sales-lead-0001"
+        },
+        {
+            "value": "sales-lead-0002",
+            "partition": 2
+        },
+        {
+            "value": "sales-lead-0003"
+        }
+    ]
+}'
+
+###
+GET http://192.168.49.2/topics/my-topic HTTP/1.1
+
+###
+GET http://192.168.49.2/topics/ HTTP/1.1
+
+###
+GET http://192.168.49.2/ HTTP/1.1
