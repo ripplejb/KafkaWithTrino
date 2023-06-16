@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+    # CHANGE TO YOUR LOCAL PATH.
+      - /home/ripal/postgresql/data:/var/lib/postgresql/data
