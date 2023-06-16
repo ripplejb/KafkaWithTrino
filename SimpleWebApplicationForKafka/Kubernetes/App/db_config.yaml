@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+  namespace: app
+type: Opaque
+data:
+  pg-username: cG9zdGdyZXM=
+  pg-password: cG9zdGdyZXM=
+  
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: app
+data:
+  pg-host: "pg-service"
+  

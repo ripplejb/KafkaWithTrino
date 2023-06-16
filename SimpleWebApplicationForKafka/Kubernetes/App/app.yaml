@@ -18,6 +18,12 @@ spec:
           image: ripplejb/simple-web-application-for-kafka:11.0.0
           ports:
             - containerPort: 80
+          env:
+            - name: PG_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: pg-host
 
 ---
 

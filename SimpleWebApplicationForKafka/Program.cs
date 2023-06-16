@@ -5,11 +5,11 @@ var app = builder.Build();
 
 app.MapGet("/app/", () => "Hello World!");
 
-app.MapGet("/app/Produce", () =>
+app.MapGet("/app/PlaceOrder", () =>
 {
-    var kafkaProducer = new KafkaProducer();
-    var dr = kafkaProducer.Produce().Result;
-    return dr.Value;
+    var orderGenerator = new RandomOrderGenerator();
+    Task.Run(orderGenerator.GenerateDataAsync);
+    return $"Successfully generated an order at {DateTime.Now}";
 });
 
 app.Run();
