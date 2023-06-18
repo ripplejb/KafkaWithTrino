@@ -23,6 +23,11 @@ additionalCatalogs:
       kafka.nodes=my-cluster-kafka-bootstrap.kafka:9092
       kafka.table-names=my-topic
       kafka.hide-internal-columns=false
+   postgres: |
+      connector.name=postgresql
+      connection-url=jdbc:postgresql://pg-service.app.svc.cluster.local:5432/postgres
+      connection-user=postgres
+      connection-password=postgres
 ```
 7. Start trino cluster.
    ```bash

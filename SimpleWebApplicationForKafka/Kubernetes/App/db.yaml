@@ -23,6 +23,7 @@ spec:
       containers:
         - name: postgres
           image: postgres
+          args: ["-c", "wal_level=logical"]
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432

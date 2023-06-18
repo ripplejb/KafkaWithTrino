@@ -6,7 +6,7 @@ metadata:
   annotations:
     strimzi.io/use-connector-resources: "true"
 spec:
-  image: ripplejb/connect-debezium
+  image: ripplejb/connect-debezium:2.0.0
   replicas: 1
   bootstrapServers: my-cluster-kafka-bootstrap:9093
   tls:
@@ -14,7 +14,7 @@ spec:
       - secretName: my-cluster-cluster-ca-cert
         certificate: ca.crt
   config:
-    group.id: connect-cluster
+    group.id: my-connect-cluster
     offset.storage.topic: connect-cluster-offsets
     config.storage.topic: connect-cluster-configs
     status.storage.topic: connect-cluster-status
@@ -22,5 +22,3 @@ spec:
     config.storage.replication.factor: -1
     offset.storage.replication.factor: -1
     status.storage.replication.factor: -1
-    config.providers: file
-    config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider

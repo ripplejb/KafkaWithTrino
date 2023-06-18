@@ -14,7 +14,10 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5051",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PG_HOST": "localhost",
+        "PG_USER": "postgres",
+        "PG_PASSWORD": "postgres"
       }
     },
     "https": {
@@ -23,7 +26,10 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7041;http://localhost:5051",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PG_HOST": "localhost",
+        "PG_USER": "postgres",
+        "PG_PASSWORD": "postgres"
       }
     },
     "IIS Express": {

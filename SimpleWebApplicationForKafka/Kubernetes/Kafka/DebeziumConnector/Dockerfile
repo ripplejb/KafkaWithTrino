@@ -4,7 +4,7 @@
 
 # 2. Build and push the connector in your repository.
 
-FROM strimzi/kafka
+FROM quay.io/strimzi/kafka:0.35.1-kafka-3.4.0
 USER root:root
 RUN mkdir -p /opt/kafka/plugins/debezium
 COPY ./debezium-connector-postgres /opt/kafka/plugins/debezium

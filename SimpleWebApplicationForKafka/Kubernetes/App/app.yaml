@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: my-kafka-app
-          image: ripplejb/simple-web-application-for-kafka:11.0.0
+          image: ripplejb/simple-web-application-for-kafka:15.0.0
           ports:
             - containerPort: 80
           env:
@@ -24,6 +24,16 @@ spec:
                 configMapKeyRef:
                   name: db-config
                   key: pg-host
+            - name: PG_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: pg-username
+            - name: PG_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: pg-password
 
 ---
 
